@@ -40,62 +40,97 @@ export default function Home() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(".gsap-hero", {
-      opacity: 0,
-      y: 80,
-      duration: 3.0,
-      ease: "power4.out",
-    });
-
-    gsap.from(".gsap-about", {
-      scrollTrigger: {
-        trigger: ".gsap-about",
-        start: "top 75%",
+    gsap.fromTo(
+      ".gsap-hero",
+      { opacity: 0, y: 120, scale: 0.98 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.8,
+        ease: "power1.inOut",
+        clearProps: "all",
       },
-      opacity: 0,
-      y: 90,
-      duration: 1,
-      ease: "power3.out",
-    });
+    );
 
     gsap.fromTo(
-      ".gsap-card",
-      {
-        opacity: 0,
-        y: 80,
-      },
+      ".gsap-about",
+      { opacity: 0, y: 120, scale: 0.98 },
       {
         scrollTrigger: {
-          trigger: ".gsap-cards-wrapper",
-          start: "top 85%",
+          trigger: ".gsap-about",
+          start: "top 92%",
+          end: "top 55%",
+          scrub: 1,
           once: true,
         },
         opacity: 1,
         y: 0,
+        scale: 1,
+        duration: 1.8,
+        ease: "power1.inOut",
+        clearProps: "all",
+      },
+    );
+
+    gsap.fromTo(
+      ".gsap-card",
+      { opacity: 0, y: 120, scale: 0.96 },
+      {
+        scrollTrigger: {
+          trigger: ".gsap-cards-wrapper",
+          start: "top 92%",
+          end: "top 55%",
+          scrub: 1,
+          once: true,
+        },
+        opacity: 1,
+        y: 0,
+        scale: 1,
         stagger: 0.18,
-        duration: 0.9,
-        ease: "power3.out",
+        duration: 1.8,
+        ease: "power1.inOut",
         clearProps: "all",
       },
     );
 
     gsap.fromTo(
       ".gsap-project",
-      {
-        opacity: 0,
-        y: 90,
-      },
+      { opacity: 0, y: 120, scale: 0.96 },
       {
         scrollTrigger: {
           trigger: ".gsap-projects-wrapper",
-          start: "top 85%",
+          start: "top 92%",
+          end: "top 55%",
+          scrub: 1,
           once: true,
         },
         opacity: 1,
         y: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power3.out",
+        scale: 1,
+        stagger: 0.18,
+        duration: 1.8,
+        ease: "power1.inOut",
+        clearProps: "all",
+      },
+    );
+
+    gsap.fromTo(
+      ".gsap-contact",
+      { opacity: 0, y: 120, scale: 0.98 },
+      {
+        scrollTrigger: {
+          trigger: ".gsap-contact",
+          start: "top 92%",
+          end: "top 55%",
+          scrub: 1,
+          once: true,
+        },
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.8,
+        ease: "power1.inOut",
         clearProps: "all",
       },
     );
@@ -220,16 +255,6 @@ export default function Home() {
                 {item.name}
               </button>
             ))}
-
-            <a
-              href={`https://wa.me/${whatsappNumber}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-semibold"
-            >
-              <FaWhatsapp />
-              WhatsApp Teklif Al
-            </a>
           </div>
         )}
       </header>
