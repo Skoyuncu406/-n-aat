@@ -13,3 +13,16 @@ body {
   background: #facc15;
   color: black;
 }
+
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-loadingBar {
+  animation: loadingBar 1.8s ease-in-out forwards;
+}
